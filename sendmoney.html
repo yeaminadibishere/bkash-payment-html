@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="bKash PGW Tokenized Agreement Only Page"/>
+    <meta name="author" content="Popular IT BD"/>
+    <title>Payment With BKash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel="stylesheet" href='css/bkash.css'>
+
+</head>
+<body class="verticalCenterBody">
+<div>
+    <div class="container">
+        <div style="width: 100%;">
+        <div class="header verticalCenter">
+        <div class="logo"><img src="css/bkash_payment_logo.png" alt="bKash"></div></div>
+        <div><div>
+        <div class="top verticalCenter">
+        <div class="payment-box"><div class="flex-logo">
+         
+        <div class="avatar"><img src="css/pgw-default.png" alt="avatar"></div></div>
+        <div class="flex-merchant details"><h4 align="center">Invoice Id:  </h4>
+        <hr/>
+        <p class="p1"></p>
+        </div>
+        <div class="flex-amount"><!----> <!----> <!----></div></div></div> <div id="form">
+            
+            
+            <form  method="post" action="connect.php" enctype="multipart/form-data" id="tokenized_form" style="margin: 0px;"><div class="row form-item"><div>
+               
+            <font color="black" align="left">
+            <ol>
+                        <li><span>*247#</span> ডায়াল করে বিকাশ মোবাইল মেন্যুতে যান, বা অ্যাপ ব্যবহার করুন।</li>
+                        <li>“সেন্ড মানি” সিলেক্ট করুন।</li>
+                       <li>আমাদের বিকাশ একাউন্ট নাম্বারটি <span><big>01831080976</big></span> প্রবেশ করুন।</li>
+                        <li><b>প্যাকেজ এর মোট <span><big>0</b></big></span> টাকা।</li>
+                        <li>রেফারেন্স হিসেবে <span></span> এই নাম্বারটি প্রবেশ করুন।</li>
+                        <li>আপনার বিকাশ মোবাইল মেন্যু পিনটি দিয়ে পেমেন্ট সম্পন্ন করুন।</li>                     </ol></font>
+                        
+                       
+            
+            <div id="inputHolder"><label for="wallet" class="infoText">
+                   বিকাশ ট্রানজেকশন আইডি প্রবেশ করুন।</label> <input id="wallet"  placeholder="e.g bKash TrxID" maxlength="30" autocomplete="off" required="required" type="text" class="form-control" name="trxID" onchange="trxID()"> <input id="walletb" type="hidden" class="form-control" name="amount" value="" hidden> <input id="walletb" type="hidden" class="form-control" name="inv" value="" hidden>  <span class="help-inline text-white"></span> <span class="infoText">By clicking on <span class="confirmText">Confirm</span>, you are agreeing to the <b class="textButton"><a href="https://gotmyhost.com/en/terms" target="_blank">terms &amp; conditions</a></b></span></div> <div><div class="buttonAction"><button href="https://gotmyhost.com/" type="button" id="close_button" class="">CLOSE
+        </button> <button type="submit" name="bkashsend" class="">CONFIRM PAYMENT
+        </button>
+                
+        </div></div></div></div> <!----> <!----></form></div></div> <div id="footerItem"><div id="credit"><img src="css/dial_icon.png" height="25px" width="25px"> <b id="dialText">+880 9638-942126</b></div></div></div></div>
+    </div>
+</div>
+<script>
+    function from_submit() {
+        var trxID = document.getElementById('trxID');
+        document.getElementById("mobile_payment").submit();
+        if(trxID.value.length<= 10 && trxID.value.length >= 10 ){
+            document.getElementById('spinner').style.display = 'block';
+            document.getElementById('mobile_payment').style.display = 'none';
+            document.getElementById("payment").outerHTML = "<div id='payment'>আপনার পেজটি রিফ্রেশ করবেন না। <span>আপনার সার্ভার তৈরি হচ্ছে...</span></div>";    
+        }else{
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
